@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telemetry-logger"
+version = "0.1.0"
+description = "Tiny dependency-free structured event logger for security research"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [{name = "Mohit Dholakiya"}]
+keywords = ["security", "telemetry", "honeypot", "logging", "structured"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Security",
+  "Topic :: System :: Logging",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/MohitDholakiya/telemetry-logger"
+Issues = "https://github.com/MohitDholakiya/telemetry-logger/issues"
+
+[project.scripts]
+tl = "telemetry_logger.cli:main"
+
+[tool.setuptools]
+packages = ["telemetry_logger"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
